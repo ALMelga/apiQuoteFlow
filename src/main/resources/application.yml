@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: apiQuoteFlow
+  main:
+    web-application-type: servlet
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    name: ${DOTENV_NAME}
+    driver-class-name: org.postgresql.Driver
+    url: ${DOTENV_URL}
+    username: ${DOTENV_USERNAME}
+    password: ${DOTENV_PASSWORD}
+server:
+  port: 8080
+
+api:
+  security:
+    token:
+      secret: ${DOTENV_JWT_SECRET:my-secret-key}
